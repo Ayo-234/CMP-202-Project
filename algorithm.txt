@@ -1,0 +1,12 @@
+Algorithm:
+1. Start the program and open the GUI.
+2. User inputs the principal amount, rate of interest, and time period.
+3. Validate the inputs:
+   - If any input is invalid (not a number), show an error message.
+4. Convert inputs to double values.
+5. Check if principal, rate, and time are greater than zero:
+   - If any input is less than or equal to zero, show an error message.
+6. Calculate the simple interest using the formula:
+   Simple Interest = (Principal * Rate * Time) / 100
+7. Display the calculated interest in the GUI.
+8. Save the input values and calculated interest to a text file named "interest_result.txt".
