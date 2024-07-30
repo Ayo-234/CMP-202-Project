@@ -1,3 +1,5 @@
+package SimpleInterestCalculatorApp;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,8 +17,9 @@ public class SimpleInterestCalculator {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
         frame.setLayout(null);
+        frame.setLocationRelativeTo(null);
 
-        JLabel principalLabel = new JLabel("Principal:");
+        JLabel principalLabel = new JLabel("Principal(₦):");
         principalLabel.setBounds(50, 50, 100, 30);
         frame.add(principalLabel);
 
@@ -24,7 +27,7 @@ public class SimpleInterestCalculator {
         principalField.setBounds(150, 50, 200, 30);
         frame.add(principalField);
 
-        JLabel rateLabel = new JLabel("Rate:");
+        JLabel rateLabel = new JLabel("Rate(%):");
         rateLabel.setBounds(50, 100, 100, 30);
         frame.add(rateLabel);
 
@@ -32,7 +35,7 @@ public class SimpleInterestCalculator {
         rateField.setBounds(150, 100, 200, 30);
         frame.add(rateField);
 
-        JLabel timeLabel = new JLabel("Time:");
+        JLabel timeLabel = new JLabel("Time(yrs):");
         timeLabel.setBounds(50, 150, 100, 30);
         frame.add(timeLabel);
 
@@ -63,6 +66,10 @@ public class SimpleInterestCalculator {
         String rateText = rateField.getText();
         String timeText = timeField.getText();
 
+        System.out.println("Principal: " + principalText);
+        System.out.println("Rate: " + rateText);
+        System.out.println("Time: " + timeText);
+
         if (!isValidDouble(principalText) || !isValidDouble(rateText) || !isValidDouble(timeText)) {
             JOptionPane.showMessageDialog(null, "Please enter valid numbers.");
             return;
@@ -78,7 +85,10 @@ public class SimpleInterestCalculator {
         }
 
         double interest = (principal * rate * time) / 100;
-        resultLabel.setText("Interest: " + interest);
+        System.out.println("Calculated Interest: " + interest);
+        resultLabel.setText("Interest: ₦" + interest);
+        // resultLabel.repaint();
+        // JOptionPane.showMessageDialog(null, "Calculated Interest: " + interest);
         saveResultToFile(principal, rate, time, interest);
     }
 
@@ -93,14 +103,11 @@ public class SimpleInterestCalculator {
 
     void saveResultToFile(double principal, double rate, double time, double interest) {
         try (FileWriter writer = new FileWriter("interest_result.txt")) {
-            writer.write("Principal: " + principal + "
-");
-            writer.write("Rate: " + rate + "
-");
-            writer.write("Time: " + time + "
-");
-            writer.write("Interest: " + interest + "
-");
+            writer.write("Principal: ₦" + principal + "\n");
+            writer.write("Rate: " + rate + "%" + "\n");
+            writer.write("Time: " + time + "yrs" + "\n");
+            writer.write("Interest: ₦" + interest + "\n");
+            System.out.println("Result saved to file.");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Error saving result to file.");
         }
