@@ -1,0 +1,19 @@
+Algorithm of File Handling part of the code
+Tasks:
+- Implement the logic to save results to a text file.
+- Ensure the file is created and written correctly.
+- Handle any potential IO exceptions and display error messages.
+
+Code:
+void saveResultToFile(double principal, double rate, double time, double interest) {
+    try (FileWriter writer = new FileWriter("interest_result.txt")) {
+        writer.write("Principal: ₦" + principal + "\n");
+        writer.write("Rate: " + rate + "%" + "\n");
+        writer.write("Time: " + time + "yrs" + "\n");
+        writer.write("Interest: ₦" + interest + "\n");
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error saving result to file.");
+    }
+}
+
+
