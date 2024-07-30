@@ -3,16 +3,6 @@
 ## Overview
 This project is a Simple Interest Calculator developed in Java. It uses a graphical user interface (GUI) created with Swing to interact with the user. The program calculates the simple interest based on user inputs: principal amount, rate of interest, and time period.
 
-## How to Run
-1. Compile the Java file:
-   ```sh
-   javac SimpleInterestCalculator.java
-   ```
-2. Run the compiled Java program:
-   ```sh
-   java SimpleInterestCalculator
-   ```
-
 ## Main Components
 - `SimpleInterestCalculator` class: Contains the entire logic for the GUI, input validation, interest calculation, and file saving.
 - GUI components: Created using Swing for a user-friendly interface.
