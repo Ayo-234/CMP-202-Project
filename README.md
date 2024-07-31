@@ -13,3 +13,10 @@ This project is a Simple Interest Calculator developed in Java. It uses a graphi
 
 ## File Saving
 - The calculated interest along with the input values are saved to a file named "interest_result.txt".
+- 
+
+##Implementation 
+1. Enter the principal amount, rate of interest, and time period in the respective fields.
+2. Click the "Calculate" button.
+3. The calculated interest will be displayed on the GUI and in a dialog box.
+4. The result will be saved in interest_result.txt.
