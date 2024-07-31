@@ -104,7 +104,48 @@ public class SimpleInterestCalculator {
     void saveResultToFile(double principal, double rate, double time, double interest) {
         try (FileWriter writer = new FileWriter("interest_result.txt")) {
             writer.write("Principal: ₦" + principal + "\n");
-            writer.write("Rate: " + rate + "%" + "\n");
+            writer.write("Rate: " + rate + "%" + "\n");java
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class SimpleInterestCalculator {
+
+    public static void main(String[] args) {
+        new SimpleInterestCalculator().createGUI();
+    }
+
+    void createGUI() {
+        JFrame frame = new JFrame("Simple Interest Calculator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+        frame.setLayout(null);
+        frame.setLocationRelativeTo(null);
+
+        JLabel principalLabel = new JLabel("Principal(₦):");
+        principalLabel.setBounds(50, 50, 100, 30);
+        frame.add(principalLabel);
+
+        JTextField principalField = new JTextField();
+        principalField.setBounds(150, 50, 200, 30);
+        frame.add(principalField);
+
+        JLabel rateLabel = new JLabel("Rate(%):");
+        rateLabel.setBounds(50, 100, 100, 30);
+        frame.add(rateLabel);
+
+        JTextField rateField = new JTextField();
+        rateField.setBounds(150, 100, 200, 30);
+        frame.add(rateField);
+
+        JLabel timeLabel = new JLabel("Time(yrs):");
+        timeLabel.setBounds(50, 150, 100, 30);
+        frame.add(timeLabel);
+
+        JTextField timeField = new JTextField();
+        timeField.setBounds(150, 150
             writer.write("Time: " + time + "yrs" + "\n");
             writer.write("Interest: ₦" + interest + "\n");
             System.out.println("Result saved to file.");
